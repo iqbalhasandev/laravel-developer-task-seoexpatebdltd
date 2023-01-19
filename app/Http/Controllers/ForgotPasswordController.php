@@ -36,7 +36,6 @@ class ForgotPasswordController extends Controller
         $token = app('auth.password.broker')->createToken($user);
         // send email to user
         $user->sendPasswordResetNotification($token);
-        dd($user, $token);
         // redirect to forgot password page
         return \redirect()->route('password.forgot.mailSend');
     }
