@@ -76,12 +76,36 @@
                                 </li>
                             </ul>
                         </li>
+                        @auth
+
+                        <li class="nav-item dropdown btn btn-white">
+                            <a class="nav-link dropdown-toggle text-dark" href="javascript:void()" id="navbarDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Account
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <b class="dropdown-item">
+                                        {{ auth()->user()->name }}
+                                        <p class="text-muted"> {{ auth()->user()->email }}</p>
+                                    </b>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
+                                </li>
+                            </ul>
+                        </li>
+                        @else
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">Login</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link btn btn-white" href="{{ route('register') }}">Sign Up</a>
                         </li>
+                        @endauth
                     </ul>
                 </div>
             </div>
