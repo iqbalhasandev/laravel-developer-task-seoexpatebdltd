@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
-
     /**
      * Showing Index page
      */
@@ -19,7 +18,8 @@ class RegisterController extends Controller
 
     /**
      * Register user
-     * @param Request $request
+     *
+     * @param  Request  $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function register(Request $request)
@@ -29,7 +29,7 @@ class RegisterController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'password' => 'required|confirmed',
-            'password_confirmation' => 'required'
+            'password_confirmation' => 'required',
         ]);
 
         // filter request

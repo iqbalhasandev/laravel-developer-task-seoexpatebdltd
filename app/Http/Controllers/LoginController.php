@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
-
     /**
      * Showing Index page
      */
@@ -17,7 +16,8 @@ class LoginController extends Controller
 
     /**
      * Login user
-     * @param Request $request
+     *
+     * @param  Request  $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function login(Request $request)
@@ -25,7 +25,7 @@ class LoginController extends Controller
         // validate request
         $request->validate([
             'email' => 'required|email',
-            'password' => 'required'
+            'password' => 'required',
         ]);
 
         // filter request
@@ -46,6 +46,7 @@ class LoginController extends Controller
 
     /**
      * Logout user
+     *
      * @return \Illuminate\Http\RedirectResponse
      */
     public function logout()

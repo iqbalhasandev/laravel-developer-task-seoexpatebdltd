@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 class ForgotPasswordController extends Controller
 {
-
     /**
      * Showing Index page
      */
@@ -18,7 +17,8 @@ class ForgotPasswordController extends Controller
 
     /**
      * Forgot password
-     * @param Request $request
+     *
+     * @param  Request  $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function forgotPassword(Request $request)
